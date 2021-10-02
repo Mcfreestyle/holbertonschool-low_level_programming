@@ -13,12 +13,12 @@ int main(void)
 	while (a <= z)
 	{
 		putchar(a);
-		a++;
 		if (a == 'z')
 		{
-			a = 'A';
+			a = '@';
 			z = 'Z';
 		}
+		a++;
 	}
 	putchar('\n');
 	return (0);
