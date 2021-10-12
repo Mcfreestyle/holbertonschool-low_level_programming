@@ -8,9 +8,9 @@
  */
 int main(void)
 {
-	int num, factor;
+	long int num, factor;
 
-	num = 1231952;
+	num = 612852475143;
 	factor = 2;
 
 	while (num > factor)
@@ -20,7 +20,7 @@ int main(void)
 		else
 			factor++;
 	}
-	printf("%i\n", factor);
+	printf("%ld\n", factor);
 	return (0);
 }
 
