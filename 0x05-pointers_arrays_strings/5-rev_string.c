@@ -23,14 +23,14 @@ int _strlen(char *s)
  */
 void rev_string(char *s)
 {
-	int count, len;
-	char *p;
+	int count, len, aux;
 
 	len = _strlen(s);
 
-	for (count = 0; count < len; count++)
+	for (count = 0; count < len / 2; count++)
 	{
-		p = s + count;
-		*p = s[len - count - 1];
+		aux = s[count];
+		s[count] = s[len - 1 - count];
+		s[len - 1 - count] = aux;
 	}
 }
