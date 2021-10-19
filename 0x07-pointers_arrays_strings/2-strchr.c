@@ -8,11 +8,16 @@
  */
 char *_strchr(char *s, char c)
 {
-	while (*s)
+	int len, i;
+
+	len = strlen(s);
+	i = 0;
+
+	while (i <= len)
 	{
-		if (*s == c)
-			return (s);
-		s++;
+		if (*(s + i) == c)
+			return (s + i);
+		i++;
 	}
 	return (NULL);
 }
