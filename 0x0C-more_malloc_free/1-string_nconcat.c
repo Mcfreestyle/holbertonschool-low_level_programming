@@ -17,16 +17,17 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	i = 0;
 	j = 0;
-
 	if (s1 == NULL)
 		size1 = 0;
 	else
 		size1 = strlen(s1);
-
 	if (s2 == NULL)
 		size2 = 0;
 	else
 		size2 = strlen(s2);
+
+	if (s1 == NULL && s2 == NULL)
+		return (NULL);
 
 	if (n < size2)
 	{
@@ -44,7 +45,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	for (i = 0; i < size1; i++)
 		*(str + i) = *(s1 + i);
-
 	for (; i < mem - 1; i++)
 	{
 		*(str + i) = *(s2 + j);
