@@ -14,12 +14,11 @@ int main(int argc, char *argv[])
 	int cal, num1, num2;
 	char *operator;
 
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[3]);
-	operator = argv[2];
-
 	if (argc == 4)
 	{
+		num1 = atoi(argv[1]);
+		num2 = atoi(argv[3]);
+		operator = argv[2];
 		if (get_op_func(operator) == NULL)
 		{
 			printf("Error\n");
