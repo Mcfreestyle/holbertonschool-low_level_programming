@@ -65,7 +65,7 @@ void print_all(const char * const format, ...)
 	while (format != NULL && i < strlen(format))
 	{
 		j = match_type(list, format, i);
-		if (i != strlen(format) - 1 && j == 1)
+		if (i != (strlen(format) - 1) && j == 1)
 			printf(", ");
 		i++;
 	}
