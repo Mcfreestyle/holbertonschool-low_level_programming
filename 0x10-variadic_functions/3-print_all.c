@@ -57,16 +57,15 @@ int match_type(va_list list, const char * const format, int i)
 void print_all(const char * const format, ...)
 {
 	va_list list;
-	unsigned int len, i, j;
+	unsigned int i, j;
 
 	i = 0;
-	len = strlen(format);
 
 	va_start(list, format);
-	while (i < len)
+	while (format != NULL && i < strlen(format))
 	{
 		j = match_type(list, format, i);
-		if (i != len - 1 && j == 1)
+		if (i != strlen(format) - 1 && j == 1)
 			printf(", ");
 		i++;
 	}
