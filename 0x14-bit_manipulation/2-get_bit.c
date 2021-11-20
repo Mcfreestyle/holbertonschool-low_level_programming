@@ -8,21 +8,14 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int temp;
-	unsigned int i = 0;
+	unsigned int max_bits;
+	unsigned long int mask = 1;
 
-	temp = n;
-	while (temp > 1)
-	{
-		temp = temp >> 1;
-		i++;
-	}
-	if (index > i)
+	max_bits = sizeof(n) * 8;
+
+	if (index >= max_bits)
 		return (-1);
-	while (index > 0)
-	{
-		n = n >> 1;
-		index--;
-	}
-	return (n & 1);
+
+	mask = n & (mask << index);
+	return (mask >> index);
 }
