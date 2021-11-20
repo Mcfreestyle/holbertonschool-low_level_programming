@@ -9,8 +9,14 @@
  */
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	if (n == NULL)
+	unsigned int max_bits;
+	unsigned long int mask = 1;
+
+	max_bits = sizeof(*n) * 8;
+	if (n == NULL || index >= max_bits)
 		return (-1);
-	*n = *n | (1 << index);
+
+	mask = mask << index;
+	*n = *n | mask;
 	return (1);
 }
