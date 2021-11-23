@@ -14,7 +14,6 @@ int create_file(const char *filename, char *text_content)
 {
 	int fd, nbytes, wr_bytes;
 
-	nbytes = strlen(text_content);
 	if (filename == NULL)
 		return (-1);
 
@@ -23,6 +22,8 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	if (text_content == NULL)
 		text_content = "";
+
+	nbytes = strlen(text_content);
 	wr_bytes = write(fd, text_content, nbytes);
 	if (wr_bytes < 0)
 		return (-1);
