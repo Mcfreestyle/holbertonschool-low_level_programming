@@ -17,7 +17,7 @@ void validation(int ret1, int ret2, char *file_from, char *file_to)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
-	if (rt2 < 0)
+	if (ret2 < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
