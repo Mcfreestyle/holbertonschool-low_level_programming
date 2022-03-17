@@ -16,11 +16,11 @@ def island_perimeter(grid):
             if col == 1:
                 if j == 0 or row[j - 1] == 1:
                     sides -= 1
-                if j == len(row) or row[j + 1] == 1:
+                if j == len(row) - 1 or row[j + 1] == 1:
                     sides -= 1
                 if i == 0 or grid[i - 1][j] == 1:
                     sides -= 1
-                if i == len(grid) or grid[i + 1][j] == 1:
+                if i == len(grid) - 1 or grid[i + 1][j] == 1:
                     sides -= 1
                 per += sides
     return (per)
