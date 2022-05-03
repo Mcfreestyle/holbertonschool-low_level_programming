@@ -15,7 +15,7 @@ int jump_search(int *array, size_t size, int value)
 	size_t prev = 0,
 	       step = 0;/* block size to be jumped */
 
-	if (!array)
+	if (!array || size == 0)
 		return (-1);
 
 	/* Finding the block where value is present (if it's present) */
